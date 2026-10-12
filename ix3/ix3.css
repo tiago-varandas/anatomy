@@ -1,0 +1,45 @@
+.iso{--cx-cell:#2a2a2a;--cx-cell-full:#d8d8d8;--cx-glass:#171a1c;--cx-hot:#e6e6e6}
+.iso[data-theme="light"]{--cx-cell:#e4e4e1;--cx-cell-full:#2c2c30;--cx-glass:#eef1f2;--cx-hot:#2a2a2e}
+.cx-stage{position:relative;outline:none;touch-action:pan-y;cursor:pointer}
+.cx-stage:focus-visible{outline:1px solid var(--anatomy-muted);outline-offset:6px}
+.cx-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* cell tops: rings that fill as the battery charges */
+.cx-cell{fill:var(--cx-cell);stroke:var(--anatomy-lo);stroke-width:.35;transition:fill 400ms var(--anatomy-ease)}
+.cx-cell[data-full]{fill:var(--cx-cell-full);stroke:var(--anatomy-hi)}
+
+/* glass: a cool tint of the paper */
+.it[data-glass] .iso-fill{fill:var(--cx-glass);fill-opacity:.18}
+.it[data-glass] .iso-shade,.it[data-glass] .iso-top{fill:var(--cx-glass);fill-opacity:.22}
+.it[data-glass] .iso-edge{stroke:var(--anatomy-mid)}
+
+/* a line carrying power lights */
+.it[data-hot] .tb-body{fill:var(--cx-hot)}
+.it[data-hot] .tb-shine,.it[data-hot] .tb-shade{fill:var(--cx-hot)}
+.it[data-hot] .tb-edge{stroke:var(--anatomy-lit)}
+
+/* the motors and wheels are the lit accent while driving */
+.cx-stage[data-mode="drive"] .it[data-name^="front.motor"] .iso-edge,.cx-stage[data-mode="drive"] .it[data-name^="rear.motor"] .iso-edge,.cx-stage[data-mode="drive"] .it[data-wheel] .iso-edge{stroke:var(--anatomy-lit)}
+.cx-stage[data-mode="drive"] .it[data-name^="front.motor"] .iso-top,.cx-stage[data-mode="drive"] .it[data-name^="rear.motor"] .iso-top{fill:var(--anatomy-lit-top)}
+.cx-stage[data-mode="charge"] .it[data-name^="battery"] .iso-edge{stroke:var(--anatomy-lit)}
+
+/* picking an assembly: it takes the lit accent, everything else steps down */
+.it{transition:opacity 260ms var(--anatomy-ease)}
+.cx-stage[data-focus] .it:not([data-on]){opacity:.38}
+.it[data-on] .iso-edge,.it[data-on] .tb-edge{stroke:var(--anatomy-lit)}
+.it[data-on] .iso-top{fill:var(--anatomy-lit-top)}
+.it[data-on] .iso-shade{fill:var(--anatomy-lit-shade)}
+
+.cx-parts{display:flex;flex-wrap:wrap;gap:6px 8px;margin-top:14px}
+.cx-part{font:10.5px/1 var(--anatomy-mono);letter-spacing:.04em;color:var(--anatomy-muted);background:none;border:1px solid var(--anatomy-faint);padding:6px 8px;cursor:pointer}
+.cx-part[data-on],.cx-part:hover{color:var(--anatomy-strong);border-color:var(--anatomy-mid)}
+@media (prefers-reduced-motion:reduce){.cx-cell,.it{transition:none}}
+.cx-window{fill:var(--cx-screen);stroke:var(--anatomy-lo);stroke-width:.3}
+.cx-digits{fill:var(--cx-screen-ink);font-family:var(--anatomy-mono);font-variant-numeric:tabular-nums}
+.iso{--cx-screen:#0a0a0a;--cx-screen-ink:#e6e6e6}
+.iso[data-theme="light"]{--cx-screen:#26262a;--cx-screen-ink:#f4f4f1}
+/* black plastic: arch trims and sill cladding */
+.iso{--cx-trim:#0c0c0c;--cx-trim-top:#161616}
+.iso[data-theme="light"]{--cx-trim:#4a4a4e;--cx-trim-top:#5c5c60}
+.it[data-trim] .iso-fill,.it[data-trim] .iso-shade{fill:var(--cx-trim)}
+.it[data-trim] .iso-top{fill:var(--cx-trim-top)}

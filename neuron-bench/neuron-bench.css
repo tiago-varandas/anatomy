@@ -1,0 +1,44 @@
+.iso{
+  --nb-fluid:#3a3a3a;--nb-fluid-top:#4a4a4a;--nb-fluid-side:#333333;--nb-fluid-dark:#2c2c2c;
+  --nb-hot:#e8e8e8;--nb-hot-top:#ffffff;--nb-hot-side:#cfcfcf;
+  --nb-window:#0c0c0c;--nb-digits:#d4d4d4;
+}
+.iso[data-theme="light"]{
+  --nb-fluid:#dcdcd8;--nb-fluid-top:#e8e8e4;--nb-fluid-side:#d2d2ce;--nb-fluid-dark:#c8c8c4;
+  --nb-hot:#2a2a2e;--nb-hot-top:#4a4a4e;--nb-hot-side:#1c1c1f;
+  --nb-window:#26262a;--nb-digits:#f4f4f1;
+}
+.nb-stage{position:relative;outline:none;touch-action:pan-y;-webkit-tap-highlight-color:transparent}
+.nb-stage:focus-visible{outline:1px solid var(--anatomy-muted);outline-offset:6px}
+.nb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* fluid columns: a tint of the figure's own inks, lit while the cell spikes */
+.nb-fluid .iso-fill{fill:var(--nb-fluid)}
+.nb-fluid .iso-top{fill:var(--nb-fluid-top)}
+.nb-fluid .iso-shade{fill:var(--nb-fluid-side)}
+.nb-fluid .iso-shade[data-shade="0"]{fill:var(--nb-fluid-dark)}
+.nb-fluid .iso-fill,.nb-fluid .iso-top,.nb-fluid .iso-shade{transition:fill 260ms var(--anatomy-ease)}
+.nb-fluid[data-hot] .iso-fill,.nb-fluid[data-hot] .iso-shade{fill:var(--nb-hot-side)}
+.nb-fluid[data-hot] .iso-top{fill:var(--nb-hot-top)}
+.nb-fluid[data-hot] .iso-edge{stroke:var(--anatomy-lit)}
+.nb-glint{opacity:.9}
+
+/* a pulse running down an axon lights the chunks it is passing through */
+.it[data-route] .tb-body,.it[data-route] .tb-shine,.it[data-route] .tb-shade{transition:fill 180ms var(--anatomy-ease)}
+.it[data-hot] .tb-body{fill:var(--nb-hot-side)}
+.it[data-hot] .tb-shine{fill:var(--nb-hot-top)}
+.it[data-hot] .tb-shade{fill:var(--nb-hot)}
+.it[data-hot] .tb-edge{stroke:var(--anatomy-lit)}
+
+/* a synapse lights as its pulse passes and when it learns */
+.nb-valve .iso-shade,.nb-valve .iso-top,.nb-valve .iso-fill{transition:fill 220ms var(--anatomy-ease)}
+.nb-valve[data-hot] .iso-fill,.nb-valve[data-hot] .iso-shade{fill:var(--nb-hot-side)}
+.nb-valve[data-hot] .iso-top{fill:var(--nb-hot-top)}
+.nb-valve[data-hot] .iso-edge{stroke:var(--anatomy-lit)}
+.nb-needle{stroke-width:1.1}
+.it[data-learn] .nb-needle{stroke:var(--anatomy-lit)}
+
+.nb-key{cursor:pointer;transition:transform 140ms var(--anatomy-ease)}
+.nb-window{fill:var(--nb-window);stroke:var(--anatomy-lo);stroke-width:.3}
+.nb-digits{fill:var(--nb-digits);font-family:var(--anatomy-mono);font-variant-numeric:tabular-nums;letter-spacing:.08em}
+@media (prefers-reduced-motion:reduce){.nb-fluid .iso-fill,.nb-fluid .iso-top,.nb-fluid .iso-shade,.it[data-route] .tb-body,.nb-key{transition:none}}
