@@ -2,3 +2,5 @@
 node_modules/
 .vercel/
 **/shots/
+ix3-gallery/
+dj-booth/v1/
