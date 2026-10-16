@@ -6,6 +6,10 @@ Interactive isometric figures that explain how things work, built as standalone 
 - **Fig 2 · BMW iX3 on the bench** (`ix3/`): a 1:10 model of the 2025 Neue Klasse iX3. Take it apart into eight assemblies, launch it 0–100 km/h, or fast-charge it 10→80%, all driven by a model of the car's published figures.
 
 - **Fig 3 · Anatomy of a DJ booth** (`dj-booth/`): two CDJ-3000X players and a DJM-A9 mixer you can play, with eight original synthesized tracks, Color FX, Beat FX and a live signal-flow overlay (Tone.js).
+- **Fig 4 · Anatomy of x.com** (`xcom/`): seven floating layers of a service like X, with one post followed through the "For You" pipeline X described when it open-sourced its recommendation code in 2023.
+- **Fig 5 · Tesla Roadster, a flying car on compressed air** (`roadster/`): a cutaway of the 2026 Roadster's Rocket version on a test pad. Launch the three versions, take it apart, refill it, or fly it by hand and turn it on its corner nozzles, all driven by a model of the car on its air (`model.mjs`).
+
+`lnt-hero/` is the landing-page hero for Studio Little Nice Things, drawn with the same kit.
 
 `site/` is the static build ready to deploy (open `site/index.html`).
 
@@ -18,6 +22,9 @@ node neuron-bench/build.mjs && node neuron-bench/build.mjs --light
 node ix3/build.mjs && node ix3/build.mjs --light
 node ix3/build.mjs --audit   # proves the geometry: clearances, depth order, supports
 node dj-booth/build.mjs
+node xcom/build.mjs                   # writes the light and dark pages
+node roadster/build.mjs               # four views and both pages; --audit proves the geometry
+node lnt-hero/build.mjs && node lnt-hero/build.mjs --dark
 ```
 
 The drawing kit in `kit/` and the check scripts in `scripts/` come from the [anatomy skill](https://github.com/wheresryan22/anatomy) (MIT, see `kit/LICENSE`).
