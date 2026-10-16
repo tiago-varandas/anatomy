@@ -670,7 +670,7 @@ const body =
     body: `<div class="iso-stage cx-stage" tabindex="0" role="group" aria-label="BMW iX3 model. Space takes it apart or puts it together; D runs a 0 to 100 sprint; C charges from 10 to 80 percent; arrow keys pick an assembly; Escape clears.">${svg}<span class="cx-sr" role="status" aria-live="polite" data-status></span></div>`,
   });
 
-const CREDIT = `<style>.credit{margin:40px 0 0;color:var(--anatomy-muted);font:11px/1.4 var(--anatomy-mono);letter-spacing:.04em}.credit a{color:var(--anatomy-text);text-decoration:none;border-bottom:1px solid var(--anatomy-faint)}.credit a:hover{color:var(--anatomy-strong);border-color:var(--anatomy-mid)}</style><p class="credit">Made by <a href="https://www.littlenicethings.com/">Studio Little Nice Things</a></p>`;
+const CREDIT = `<style>.credit{margin:40px 0 0;color:var(--anatomy-muted);font:11px/1.4 var(--anatomy-mono);letter-spacing:.04em}.credit a{color:var(--anatomy-text);text-decoration:none;border-bottom:1px solid var(--anatomy-faint)}.credit a:hover{color:var(--anatomy-strong);border-color:var(--anatomy-mid)}</style><p class="credit">Made by <a href="https://www.littlenicethings.com/">Studio Little Nice Things</a> · <a href="https://buymeacoffee.com/littlenicethings">Support future experiments ☕️</a></p>`;
 const page = k.pageHtml({ title: "BMW iX3 on the bench", theme: THEME, body: body.replace('</figure>', `<div class="cx-parts">${PARTS_BUTTONS}</div></figure>`) + CREDIT, script: kitScript() + latheScript + MODEL + LIVE, width: 720 });
 const name = THEME === "light" ? "ix3-light.html" : "ix3.html";
 writeFileSync(join(HERE, name), page);

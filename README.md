@@ -22,4 +22,4 @@ node dj-booth/build.mjs
 
 The drawing kit in `kit/` and the check scripts in `scripts/` come from the [anatomy skill](https://github.com/wheresryan22/anatomy) (MIT, see `kit/LICENSE`).
 
-Made by [Studio Little Nice Things](https://www.littlenicethings.com/).
+Made by [Studio Little Nice Things](https://www.littlenicethings.com/). [Support future experiments ☕️](https://buymeacoffee.com/littlenicethings)

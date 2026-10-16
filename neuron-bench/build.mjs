@@ -329,7 +329,7 @@ const body =
     body: `<div class="iso-stage nb-stage" tabindex="0" role="group" aria-label="Neuron bench. Press 1 for food, 2 for the bell, 3 for the light, Space to ring the bell just before the food, and R to reset the synapses.">${svg}<span class="nb-sr" role="status" aria-live="polite" data-status></span></div>`,
   });
 
-const CREDIT = `<style>.credit{margin:40px 0 0;color:var(--anatomy-muted);font:11px/1.4 var(--anatomy-mono);letter-spacing:.04em}.credit a{color:var(--anatomy-text);text-decoration:none;border-bottom:1px solid var(--anatomy-faint)}.credit a:hover{color:var(--anatomy-strong);border-color:var(--anatomy-mid)}</style><p class="credit">Made by <a href="https://www.littlenicethings.com/">Studio Little Nice Things</a></p>`;
+const CREDIT = `<style>.credit{margin:40px 0 0;color:var(--anatomy-muted);font:11px/1.4 var(--anatomy-mono);letter-spacing:.04em}.credit a{color:var(--anatomy-text);text-decoration:none;border-bottom:1px solid var(--anatomy-faint)}.credit a:hover{color:var(--anatomy-strong);border-color:var(--anatomy-mid)}</style><p class="credit">Made by <a href="https://www.littlenicethings.com/">Studio Little Nice Things</a> · <a href="https://buymeacoffee.com/littlenicethings">Support future experiments ☕️</a></p>`;
 const page = k.pageHtml({ title: "Neuron bench", theme: THEME, body: body + CREDIT, script: kitScript() + MODEL + LIVE, width: 680 });
 const name = THEME === "light" ? "neuron-bench-light.html" : "neuron-bench.html";
 writeFileSync(join(HERE, name), page);

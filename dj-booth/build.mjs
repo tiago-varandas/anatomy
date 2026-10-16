@@ -380,7 +380,7 @@ const page = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta n
 </figcaption>
 <ol class="dj-list"></ol>
 </figure>
-<p class="credit">Made by <a href="https://www.littlenicethings.com/">Studio Little Nice Things</a></p>
+<p class="credit">Made by <a href="https://www.littlenicethings.com/">Studio Little Nice Things</a> · <a href="https://buymeacoffee.com/littlenicethings">Support future experiments ☕️</a></p>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
 <script type="module">${(kitScript() + ENGINE + UI).replace(/<\/(script)/gi, "<\\/$1")}</script>
